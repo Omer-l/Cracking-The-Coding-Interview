@@ -9,7 +9,8 @@
  *
  *
  * My approach
- *
+ * Firstly splitting the input string by the occurrence of spaces.
+ * Now, the words are separates by spaces, simply append the words into a new string with a '%20' after each word.
  */
 public class Q01_03 {
 

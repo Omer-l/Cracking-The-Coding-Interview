@@ -9,9 +9,8 @@
 public class Q01_02 {
 
     public static void main(String[] args) {
-        String string1 = "abcde";
-        String string2 = "edcba";
-        assert string1.length() == 0: "Not a valid input";
+        String string1 = "aab1crde";
+        String string2 = "edcbara1";
         System.out.println(permutationOfTheOther(string1, string2));
     }
 
@@ -22,16 +21,22 @@ public class Q01_02 {
      * @return              true if the two strings are a permutation.
      */
     public static boolean permutationOfTheOther(String string1, String string2) {
-        if (string1.length() != string2.length() || string1.length() == 0)
-            return false;
-        else
-            for (int characterIterator = 0; characterIterator < string1.length(); characterIterator++) {
-                char string1Char = string1.charAt(string2.length() - characterIterator - 1); //right of string 1
-                char string2Char = string2.charAt(characterIterator); //left of string 2
+        int lengthOfString = string1.length(); //length of string(s)
+        int[] containsElement = new int[128]; //element will be counting if contains the ascii index number
 
-                if(string1Char != string2Char)
+        if (string1.length() != string2.length() || lengthOfString == 0)
+            return false;
+        else {
+            for (int string1Iterator = 0; string1Iterator < lengthOfString; string1Iterator++)
+                containsElement[string1Iterator]++;   //sets a standard in the int array to evaluate with string 2
+
+            //now evaluating string 2, does it contain all the elements of string 1 the exact same number of times?
+            for(int string2Iterator = 0; string2Iterator < lengthOfString; string2Iterator++) {
+                containsElement[string2Iterator]--;
+                if(containsElement[string2Iterator] < 0) //ensures that string 2 doesn't contain a different character
                     return false;
             }
+        }
 
         return true;
     }
