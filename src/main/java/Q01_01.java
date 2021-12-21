@@ -13,7 +13,7 @@ import java.util.Scanner;
  * If the corresponding index is already true, then clearly this character has been seen before and the string
  * is not unique.
  */
-public class Q1_1 {
+public class Q01_01 {
     private static boolean[] containsElement = new boolean[128]; //to refer each letter in the string to
     private static String userInput = "";
 
