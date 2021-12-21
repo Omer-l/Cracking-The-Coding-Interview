@@ -27,7 +27,6 @@ public class Q01_05Test {
         Q01_05 q01_05 = new Q01_05("pale");
         String editedString = "bale";
         boolean actual = q01_05.oneEditReplace(editedString);
-
         assertTrue(actual);
     }
 

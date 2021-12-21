@@ -16,6 +16,11 @@ public class Q01_05 {
         this.original = original;
     }
 
+    /**
+     * Compares edited string to this original string
+     * @param edited        string to compare
+     * @return              true if only 1 edit is made.
+     */
     public boolean edited(String edited) {
 
         if(original.length() == edited.length()) { //a replaced character?
@@ -29,6 +34,11 @@ public class Q01_05 {
         return false;
     }
 
+    /**
+     * finds differences in the edited string
+     * @param editedString      edited string to compare
+     * @return                  true if edited string has only 1 change compared to the original.
+     */
     public boolean oneEditReplace(String editedString) {
         int differenceCounter = 0;
 
