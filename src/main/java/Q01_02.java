@@ -15,6 +15,12 @@ public class Q01_02 {
         System.out.println(permutationOfTheOther(string1, string2));
     }
 
+    /**
+     * Iterates from the far right of string1 and the far left of string2 and determines whether they are a permutation
+     * @param string1       is string 1 to evaluate
+     * @param string2       is string 2 to evaluate
+     * @return              true if the two strings are a permutation.
+     */
     public static boolean permutationOfTheOther(String string1, String string2) {
         if (string1.length() != string2.length() || string1.length() == 0)
             return false;
