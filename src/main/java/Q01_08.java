@@ -5,7 +5,6 @@
  * <br>
  * <b>My Approach</b>
  * <br>
- *
  */
 public class Q01_08 {
     private int[][] matrix;
@@ -18,28 +17,27 @@ public class Q01_08 {
         this.matrix = generateMatrix();
     }
 
+    //Generates a matrix of arbitrary numbers
     private int[][] generateMatrix() {
         int[][] matrix = new int[rows][columns];
         int count = 1;
-        for(int rowNumber = 0; rowNumber < rows; rowNumber++)
-            for(int columnNumber = 0; columnNumber < columns; columnNumber++)
-                    matrix[rowNumber][columnNumber] = count++;
-//        matrix[rowNumber][columnNumber] = (int)(Math.random() * 13);
-        matrix[0][3] = 0;
-        matrix[4][7] = 0;
+        for (int rowNumber = 0; rowNumber < rows; rowNumber++)
+            for (int columnNumber = 0; columnNumber < columns; columnNumber++)
+                matrix[rowNumber][columnNumber] = (int) (Math.random() * 30);
         return matrix;
     }
 
     /**
      * Searches matrix for number of zeros
-     * @return  number of zeros in matrix
+     *
+     * @return number of zeros in matrix
      */
     public int getNumberOfZeros() {
         int zeroCounter = 0;
 
-        for(int rowNumber = 0; rowNumber < rows; rowNumber++)
-            for(int columnNumber = 0; columnNumber < columns; columnNumber++)
-                if(matrix[rowNumber][columnNumber] == 0)
+        for (int rowNumber = 0; rowNumber < rows; rowNumber++)
+            for (int columnNumber = 0; columnNumber < columns; columnNumber++)
+                if (matrix[rowNumber][columnNumber] == 0)
                     zeroCounter++;
 
         return zeroCounter;
@@ -47,18 +45,19 @@ public class Q01_08 {
 
     /**
      * Creates an array of zero bomb locations.
-     * @return  an array of zero bombs with their respective coordinates
+     *
+     * @return an array of zero bombs with their respective coordinates
      */
     public ZeroBomb[] getZeroLocations() {
         ZeroBomb[] zeroBombs = new ZeroBomb[getNumberOfZeros()]; //assign necessary size of the array
         int zeroBombsIndex = 0;
 
-        for(int rowNumber = 0; rowNumber < rows; rowNumber++)
-            for(int columnNumber = 0; columnNumber < columns; columnNumber++)
-                if(matrix[rowNumber][columnNumber] == 0)
+        for (int rowNumber = 0; rowNumber < rows; rowNumber++)
+            for (int columnNumber = 0; columnNumber < columns; columnNumber++)
+                if (matrix[rowNumber][columnNumber] == 0)
                     zeroBombs[zeroBombsIndex++] = new ZeroBomb(rowNumber, columnNumber);
 
-       return zeroBombs;
+        return zeroBombs;
     }
 
     /**
