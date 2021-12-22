@@ -1,13 +1,17 @@
 /**
  * 1.5
- One Away: There are three types of edits that can be performed on strings: insert a character,
- remove a character, or replace a character. Given two strings, write a function to check if they are
- one edit (or zero edits) away.
- EXAMPLE
- pale, ple -> true
- pales, pale -> true
- pale, bale -> true
- pale, bae -> false
+ * One Away: There are three types of edits that can be performed on strings: insert a character,
+ * remove a character, or replace a character. Given two strings, write a function to check if they are
+ * one edit (or zero edits) away.
+ * EXAMPLE
+ * pale, ple -> true
+ * pales, pale -> true
+ * pale, bale -> true
+ * pale, bae -> false
+ *
+ * My Approach
+ * If the strings are both the same length, then ensure that there is only one difference between the two strings.
+ * If the strings vary in length, depending on which one is longer and should only be longer or less than 1, assess accordingly.
  */
 public class Q01_05 {
     private final String original;

@@ -6,8 +6,10 @@
  * Hints:#92, #110
  * <p>
  * My Approach
- * Get the size of the compression required for the StringBuilder
- * From the beginning count until the next new character, then repeat until end of string..
+ * Get the size of the compression first, this is by counting the occurence of each letter and the occurence number's
+ * length + the letter is added iteratively.
+ * Once the size if acquired, we have a fixed size so no unnecessary capacity doubling in the string builder will be made.
+ * Then iterate again through the string, adding the compression to the string every time a new letter is found.
  */
 public class Q01_06 {
     private final String stringToCompress;

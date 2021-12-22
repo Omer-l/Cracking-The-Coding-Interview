@@ -1,5 +1,19 @@
 import java.util.Arrays;
 
+/**
+ * Rotate Matrix: Given an image represented by an NxN matrix, where each pixel in the image is 4
+ * bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
+ * Hints: #51, # 100
+ *
+ * My Approach
+ * 4 bytes means 2^4 size, so a 4x4 matrix for each pixel. For each pixel do this:
+ * Starting from the outermost layer, make a temporary top left-most element. Keep this until the swapping the right side.
+ * Start from the left->top,
+ * bottom->left
+ * right->bottom
+ * temporaryTop->right
+ * Then move one layer inwards.
+ */
 public class Q01_07 {
     private int[][] image4Byte;
 
@@ -29,10 +43,10 @@ public class Q01_07 {
         int layer = 1;
         //layer 0
         for(int elementIndex = 0; elementIndex < image4Byte.length - layer; elementIndex++) {
-            int temp = image4Byte[0][elementIndex];
-            image4Byte[0][elementIndex] = image4Byte[image4Byte.length - elementIndex - 1][0];//left to top
-            image4Byte[image4Byte.length - elementIndex - 1][0] = image4Byte[image4Byte.length - 1][image4Byte.length - elementIndex - 1]; //bottom to left
-            image4Byte[image4Byte.length - 1][image4Byte.length - elementIndex - 1] = image4Byte[elementIndex][image4Byte.length - 1];//right to bottom
+            int temp = image4Byte[layer - 1][elementIndex];
+            image4Byte[layer - 1][elementIndex] = image4Byte[image4Byte.length - elementIndex - layer][layer - 1];//left to top
+            image4Byte[image4Byte.length - elementIndex - layer][layer - 1] = image4Byte[image4Byte.length - layer][image4Byte.length - elementIndex - layer]; //bottom to left
+            image4Byte[image4Byte.length - layer][image4Byte.length - elementIndex - layer] = image4Byte[elementIndex][image4Byte.length - 1];//right to bottom
             image4Byte[elementIndex][image4Byte.length - 1] = temp; //top to right
             System.out.println("AFTER 1 ELEMENT MOVE:");
             printRows(image4Byte);
