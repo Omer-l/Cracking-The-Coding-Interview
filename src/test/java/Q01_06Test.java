@@ -1,3 +1,4 @@
+import chapter1.Q01_06;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

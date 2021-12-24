@@ -1,3 +1,5 @@
+package chapter1;
+
 import java.util.Scanner;
 
 /**
@@ -7,11 +9,10 @@ import java.util.Scanner;
  *
  *
  * My approach:
- * Create a boolean array of size 128 (each index representing the existence of an ascii value)
- * Iterate through string, evaluating each character and whether the corresponding index is
- * true in the boolean array (i.e., 'I' has a value of 73, so the array index 73 will be turned to true)
- * If the corresponding index is already true, then clearly this character has been seen before and the string
- * is not unique.
+ * Create a boolean array of size ascii numbers.
+ * Iterate through string, setting array ascii indexes to true.
+ * If next character's allocated position in the hash table-like array is already true,
+ * then this string does not contain all unique characters.
  */
 public class Q01_01 {
     private static boolean[] containsElement = new boolean[128]; //to refer each letter in the string to

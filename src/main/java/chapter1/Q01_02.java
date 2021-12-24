@@ -1,11 +1,13 @@
+package chapter1;
+
 /**
  * Check Permutation: Given two strings, write a method to decide if one is a permutation of the
  * other.
  * Hints: #7, #84, #722, #737
  *
  * My Approach
- * Comparison of right elements of first string to left elements of second string, then iterate to the next elements.
- */
+ *
+ * */
 public class Q01_02 {
 
     public static void main(String[] args) {

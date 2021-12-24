@@ -1,3 +1,5 @@
+package chapter1;
+
 /**
  * 1.3 URLify: Write a method to replace all spaces in a string with '%20'. You may assume that the string
  * has sufficient space at the end to hold the additional characters, and that you are given the "true"
@@ -9,8 +11,8 @@
  *
  *
  * My approach
- * Firstly splitting the input string by the occurrence of spaces.
- * Now, the words are separates by spaces, simply append the words into a new string with a '%20' after each word.
+ * Split the input but spaces.
+ * Then, append each word + '%20' to a string builder object until the last word is added.
  */
 public class Q01_03 {
 

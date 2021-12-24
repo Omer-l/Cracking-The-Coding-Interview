@@ -1,3 +1,16 @@
+package chapter1;
+
+/**
+ * String Rotation:Assumeyou have a method isSubstringwhich checks if oneword is a substring
+ * of another. Given two strings, sl and s2, write code to check if s2 is a rotation of sl using only one
+ * call to isSubstring (e.g., "waterbottle" is a rotation of"erbottlewat").
+ * Hints: #34, #88, # 7 04
+ *
+ * My Approach
+ * Append substring 1 to itself.
+ * If this newly created string contains substring 2, then substring 2 is a rotation.
+ */
+
 public class Q01_09 {
     private String substring1;
     private String substring2;
