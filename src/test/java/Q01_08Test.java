@@ -1,4 +1,4 @@
-import chapter1.Q01_08;
+import chapter01.Q01_08;
 import org.junit.Test;
 
 public class Q01_08Test {

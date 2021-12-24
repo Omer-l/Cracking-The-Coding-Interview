@@ -1,4 +1,4 @@
-import chapter1.Q01_04;
+import chapter01.Q01_04;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
