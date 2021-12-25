@@ -1,5 +1,4 @@
-package chapter02;
-
+import chapter02.Q01;
 import org.junit.Test;
 
 import java.util.LinkedList;

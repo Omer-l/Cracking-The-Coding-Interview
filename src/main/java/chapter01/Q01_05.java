@@ -11,9 +11,12 @@ package chapter01;
  * pale, bale -> true
  * pale, bae -> false
  *
- * My Approach
- * If the strings are both the same length, then ensure that there is only one difference between the two strings.
- * If the strings vary in length, depending on which one is longer and should only be longer or less than 1, assess accordingly.
+ * My Approach 3 days later
+ * If both strings are of the same length, then count up the differences. If more than one difference or none, return false.
+ * If the string 1 is 1 character longer, then see if there is only one letter added by iterating to the difference, then
+ * string 2's index ++, then continue and make sure there is not another difference.
+ * Otherwise, return false as there are too many changes.
+ *
  */
 public class Q01_05 {
     private final String original;

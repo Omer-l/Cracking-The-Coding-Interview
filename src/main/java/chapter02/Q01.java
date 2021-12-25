@@ -12,8 +12,8 @@ import java.util.LinkedList;
  * @param <E> any type can be used for this question
  *
  * My Appraoch <br>
- * This may take more space, but a hash table makes the time complexity to remove
- * all duplicates in 1 time.
+ * Create a hash table and iteratively store all the elements currently not in the hash table.
+ * If the hash table already contains the element, then the linked list must have a duplicate data.
  */
 public class Q01<E> {
     LinkedList<E> unsortedList;

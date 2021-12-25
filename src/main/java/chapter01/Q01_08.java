@@ -5,9 +5,10 @@ package chapter01;
  * column are set to 0.
  * Hints:#17, #74, #702
  * <br>
- * <b>My Approach</b>
- *
- * <br>
+ * <b>My Approach</b> 3 days<br>
+ * Firstly, create an array of zero bombs, each zero bomb has a location of where it is in the matrix.
+ * Then, iterate through the entire matrix and where there is a zero bomb in the same x or y axis in the matrix, put a 0.
+ * This takes O(2n), AKA O(n) time.
  */
 public class Q01_08 {
     private int[][] matrix;

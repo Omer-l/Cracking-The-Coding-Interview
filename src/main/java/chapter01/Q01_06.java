@@ -7,11 +7,12 @@ package chapter01;
  * the original string. You can assume the string has only uppercase and lowercase letters (a - z).
  * Hints:#92, #110
  * <p>
- * My Approach
- * Get the size of the compression first, this is by counting the occurence of each letter and the occurence number's
- * length + the letter is added iteratively.
- * Once the size if acquired, we have a fixed size so no unnecessary capacity doubling in the string builder will be made.
- * Then iterate again through the string, adding the compression to the string every time a new letter is found.
+ * My Approach 3 days
+ * Firstly, assign the size for the compression by counting up the number of occurences of each letter, and depending on
+ * the if the size is a unit or tens or hundreds, add that much more size to the size of the StringBuilder
+ * (this will ensure no less or extra capacity handling is required).
+ * After adding up the size of the StringbBuilder, iterate through the String once more and this time, add the letter and
+ * the number of times the letter occured.
  */
 public class Q01_06 {
     private final String stringToCompress;

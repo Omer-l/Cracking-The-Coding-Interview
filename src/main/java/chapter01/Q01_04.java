@@ -9,10 +9,11 @@ package chapter01;
  * Hints: #106, #121, #134, #136
  *
  * My Approach
- * Count the number of letter occurences.
- * build an integer array representing a hash table of the number of occurences of a letter
- * As letter occurences are counted, if two different letters occur an odd number of times, then the string is has no
- * palindrome permutations.
+ * Create a hash table, a character frequency counter table (size 25) by getting the numerical value of letters, the array
+ * only needs to be of size 25. Any letter encountered in the string can be allocated into the array by 'getNumericVaalue(ch)'
+ * Now, iterate through the string, and ++ to those indexes in the character freq table.
+ * After counting the occurency of each letter, then iterate through the frequency table. If there are more than one
+ * occurence of an odd number of occurences of a letter, then this string cannot possibly become a palindrome.
  */
 public class Q01_04 {
     private final String string;
