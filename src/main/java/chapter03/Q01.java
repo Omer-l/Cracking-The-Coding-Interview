@@ -49,7 +49,7 @@ public class Q01<E> {
         int startIndex = stackInfo.startIndex;
 
         //gets the new array's size
-        int newArrayCapacity = 0;
+        int newArrayCapacity = 1;
         for (int stackNumber = 0; stackNumber < stackInfos.length; stackNumber++)
             newArrayCapacity += stackInfos[stackNumber].capacity;
 
@@ -58,12 +58,10 @@ public class Q01<E> {
 
         System.arraycopy(arrayOfStacks, 0, newArrayOfStacks, 0, stackInfos[0].capacity);
         for(int stackNumber = 1; stackNumber < stackInfos.length; stackNumber++) { //changes the startIndex of each stack
-            int newStartIndex = stackInfos[stackNumber-1].startIndex + stackInfos[stackNumber - 1].size + 1;
+            int newStartIndex = stackInfos[stackNumber-1].startIndex + stackInfos[stackNumber - 1].capacity;
             StackInfo currentStack = stackInfos[stackNumber];
+            System.arraycopy(arrayOfStacks, currentStack.startIndex, newArrayOfStacks, newStartIndex, currentStack.size); //copies stack from new starting point.
             currentStack.startIndex = newStartIndex;
-            E[] currentStackToArray = (E[]) Array.newInstance(arrayOfStacks[0].getClass(), currentStack.capacity);
-
-            System.arraycopy(currentStackToArray, 0, newArrayOfStacks, newStartIndex, currentStack.capacity); //copies stack from new starting point.
         }
 
         this.arrayOfStacks = newArrayOfStacks;
