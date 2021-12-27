@@ -5,7 +5,10 @@ package chapter01;
  * other.
  * Hints: #7, #84, #722, #737
  *
- * My Approach
+ * My Approach 7 days
+ * Suppose only ascii characters are used. Firstly, make an integer array of size ascii (128). Iterate through the first
+ * String and ++ to those array indexes.
+ * Then in the next string -- those array indexes, if the array index is -1 after the --, then this string is not a perm
  *
  * */
 public class Q01_02 {

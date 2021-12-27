@@ -11,11 +11,9 @@ package chapter01;
  * pale, bale -> true
  * pale, bae -> false
  *
- * My Approach 3 days later
- * If both strings are of the same length, then count up the differences. If more than one difference or none, return false.
- * If the string 1 is 1 character longer, then see if there is only one letter added by iterating to the difference, then
- * string 2's index ++, then continue and make sure there is not another difference.
- * Otherwise, return false as there are too many changes.
+ * My Approach 7 days later
+ * If both strings are same length -> count up the difference between the two, if more than 1 diff, return false, if no diff, return false.
+ * If s1 is larger than s2, then look out for when s1 is different and +1 to its index in the iteration / vice versa if s2 was larger.
  *
  */
 public class Q01_05 {

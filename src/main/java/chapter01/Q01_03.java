@@ -10,9 +10,8 @@ package chapter01;
  * Output: "Mr%20John%20Smith"
  *
  *
- * My approach
- * Split the input but spaces.
- * Then, append each word + '%20' to a string builder object until the last word is added.
+ * My 7 days
+ * Split String by " ". Then iterate through the array and append elements to StringBuilder object with a %20
  */
 public class Q01_03 {
 

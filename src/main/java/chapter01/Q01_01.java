@@ -8,11 +8,9 @@ import java.util.Scanner;
  * Hints: #44, #7 7 7, #732
  *
  *
- * My approach:
- * Create a boolean array of size ascii numbers.
- * Iterate through string, setting array ascii indexes to true.
- * If next character's allocated position in the hash table-like array is already true,
- * then this string does not contain all unique characters.
+ * My approach: 7 days
+ * Assuming only ascii characters are used, create a boolean array of ascii size (128).
+ * if a slot in the array is already true (has been seen before), then the String is not unique
  */
 public class Q01_01 {
     private static boolean[] containsElement = new boolean[128]; //to refer each letter in the string to

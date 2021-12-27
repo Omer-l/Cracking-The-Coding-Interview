@@ -17,8 +17,11 @@ public class Chapter3AllTests {
 
     @Test
     public void resizeStack1() {
-        Q01<Integer> q01 = new Q01<>(3, 5, 5);
+        Q01<Integer> q01 = new Q01<>(3, 1, 5);
 
+        q01.add(1, 5);
+        q01.add(1, 25);
+        q01.add(3, 500);
     }
 
     /** <b> Q2 </b> */

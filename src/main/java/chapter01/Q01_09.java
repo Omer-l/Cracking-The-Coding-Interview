@@ -6,9 +6,9 @@ package chapter01;
  * call to isSubstring (e.g., "waterbottle" is a rotation of"erbottlewat").
  * Hints: #34, #88, # 7 04
  *
- * My Approach
- * Append substring 1 to itself.
- * If this newly created string contains substring 2, then substring 2 is a rotation.
+ * My Approach 7 days
+ * append s1 to itself.
+ * If s1.contains s2 now, then s2 is a rotation.
  */
 
 public class Q01_09 {

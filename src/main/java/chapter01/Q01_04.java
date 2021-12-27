@@ -8,12 +8,14 @@ package chapter01;
  * Output: True (permutations: "taco cat", "atco eta", etc.)
  * Hints: #106, #121, #134, #136
  *
- * My Approach
- * Create a hash table, a character frequency counter table (size 25) by getting the numerical value of letters, the array
- * only needs to be of size 25. Any letter encountered in the string can be allocated into the array by 'getNumericVaalue(ch)'
- * Now, iterate through the string, and ++ to those indexes in the character freq table.
- * After counting the occurency of each letter, then iterate through the frequency table. If there are more than one
- * occurence of an odd number of occurences of a letter, then this string cannot possibly become a palindrome.
+ * My Approach 7 days
+ * Firstly, a palindrome must have a maximum of 1 odd number of occurences of a letter, the rest of the letters should
+ * occur an even number of times.
+ * So, create a character frequency table of size 25 by getting the numericValue of characters, which will return 0 to 25.
+ * And thus, we can now ++ to the integer array indexes. After counting up the occurence of letter in the string and storing
+ * into the char freq table hash table, iterate through the char freq table. IF there is more than one element in the array
+ * % 2 == 1, then there is more than one odd. Otherwise if they are all even and only 1 odd is found, then this string can
+ * be made into a palindrome. racecar.
  */
 public class Q01_04 {
     private final String string;

@@ -7,15 +7,13 @@ import java.util.Arrays;
  * bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
  * Hints: #51, # 100
  *
- * My Approach 3days
- * Starting from the outmost layer, working inwards iteratively.
- * For each layer, iterate through wall of the matrix.
- * temp -> top
+ * My Approach 7 days
+ * Starting from the outermost layer, working inwards iteratively.
+ * temp = top.
  * left -> top
  * bottom -> left
  * right -> bottom
- * temp -> right
- * then word to the next inside layer.
+ * temp -> top
  */
 public class Q01_07 {
     private int[][] image4Byte;
