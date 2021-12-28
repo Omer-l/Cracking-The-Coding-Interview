@@ -22,7 +22,7 @@ public class Q01<E> {
         }
     }
 
-    private StackInfo[] stackInfos;
+    private final StackInfo[] stackInfos;
     private E[] arrayOfStacks;
 
     public Q01(int numberOfStacks, int sizeOfEachStack, E elementType) {
@@ -31,7 +31,6 @@ public class Q01<E> {
 
         for (int stackNumber = 0; stackNumber < numberOfStacks; stackNumber++) {
             int startIndex = (stackNumber * sizeOfEachStack);
-            int sizeOfStack = sizeOfEachStack;
             StackInfo stackInfo = new StackInfo(startIndex, sizeOfEachStack);
             stackInfos[stackNumber] = stackInfo;
         }
@@ -73,15 +72,26 @@ public class Q01<E> {
      * @param stackIndex the stack to add the element to, i.e., 1 = stack at index 0.
      * @param element     is the element to add to the desired stack.
      */
-    public void add(int stackIndex, E element) {
-        int stackNumber = stackIndex - 1;
-        StackInfo stackInfo = stackInfos[stackNumber]; //get desired stack to add element to
+    public void push(int stackIndex, E element) {
+        StackInfo stackInfo = stackInfos[stackIndex]; //get desired stack to add element to
 
         if (full(stackInfo))
-            resize(stackNumber);
+            resize(stackIndex);
 
         int index = stackInfo.startIndex + stackInfo.size; //index in the array that the stack belongs to.
         arrayOfStacks[index] = element;
         stackInfo.size++;
+    }
+
+    //Removes a stack's latest/last in element
+    public E pop(int stackIndex) {
+        StackInfo stackInfo = stackInfos[stackIndex]; //desired stack to pop element from
+
+        if(stackInfo.size == 0) //error handler guard
+            return null;
+
+        int index = (stackInfo.startIndex + stackInfo.size) - 1;
+        stackInfo.size--;
+        return arrayOfStacks[index];
     }
 }

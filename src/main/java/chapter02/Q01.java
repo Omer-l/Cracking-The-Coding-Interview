@@ -11,9 +11,11 @@ import java.util.LinkedList;
  * Hints: #9, #40
  * @param <E> any type can be used for this question
  *
- * My Appraoch <br>
- * Create a hash table and iteratively store all the elements currently not in the hash table.
- * If the hash table already contains the element, then the linked list must have a duplicate data.
+ * My Appraoch <br> 3 days
+ *           Iterate the array list, add to hash table if element doesn't already exist in
+ *           the hash table.
+ *           Otherwise, if already exists in the hash table, remove that index from the
+ *           arraylistt
  */
 public class Q01<E> {
     LinkedList<E> unsortedList;
