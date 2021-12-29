@@ -7,7 +7,13 @@ import java.util.Stack;
  * Three in One: Describe how you could use a single array to implement three stacks.
  * Hints: #2, #72, #38, #58
  * <p>
- * My Approach 3 days
+ * My Approach 7 days
+ * For each stack, there is an instance of a StackInfo class, for which, each stack contains a starting index, in the array,
+ * the size of the stack, and the maximum capacity of the stack.
+ * When adding, check that the size is not the same as the capacity. If it is the same size, then a new array of stacks needs
+ * to be made and the stack with the maximum size's capacity is doubled.
+ * THen all the stacks are added to the arrayOfStacks again
+ * To remove, if size of the desired stack to pop an element from is not 0, then minus 1 to the size.
  *
  */
 public class Q01<E> {

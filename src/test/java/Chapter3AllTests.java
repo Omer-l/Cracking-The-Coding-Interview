@@ -46,12 +46,13 @@ public class Chapter3AllTests {
         q01.push(2, 9999999);
         q01.push(2, 292929292);
 
-        Integer expected = null;
+        Integer expected = 55;
         q01.pop(2);
         q01.pop(2);
         q01.pop(2);
         q01.pop(2);
         q01.pop(2);
+        q01.push(2, 55);
         Integer actual = q01.pop(2);
 
         assertEquals(expected, actual);
