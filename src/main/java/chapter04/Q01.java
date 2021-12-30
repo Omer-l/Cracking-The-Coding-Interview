@@ -1,20 +1,40 @@
 package chapter04;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+
 /**
  * Route Between Nodes: Given a directed graph, design an algorithm to find out whether there is a
  * route between two nodes.
  * Hints:#127
  * <p>
- * My Approach 0
- * Given indexes of each node, using an adjacency list approach, the adj list is an integer array.
- * Recursively go down the directed graph in a breadth first search order.
- * Once at the deepest level, stop the search.
+ * My Approach 1
+ * Beginning with the source index, recursively iterate to it's children and then go down a level to the next
+ * node's chi
  */
 public class Q01 {
-    int[][] directedGraph;
+
+    private enum State {
+        Unvisited, Visited, Visiting
+    }
+
+    private static class BFSNode {
+        State state = State.Unvisited;
+        int[] neighbours;
+
+        public BFSNode(int[] neighbours) {
+            this.neighbours = neighbours;
+        }
+    }
+
+    private final BFSNode[] directedGraph;
 
     public Q01(int[][] directedGraph) {
-        this.directedGraph = directedGraph;
+        this.directedGraph = new BFSNode[directedGraph.length];
+
+        for(int nodeIndex = 0; nodeIndex < directedGraph.length; nodeIndex++)
+            this.directedGraph[nodeIndex] = new BFSNode(directedGraph[nodeIndex]);
+
     }
 
     /**
@@ -25,20 +45,34 @@ public class Q01 {
      * @return true if there exists a path to the given index
      */
     public boolean existsRoute(int src, int dest) {
+        LinkedList<BFSNode> queue = new LinkedList<>();
 
-        if(src >= directedGraph.length) //ensures breadth first search is stopped when all nodes are visited.
-            return false;
+        directedGraph[src].state = State.Visiting; //current node is being visited
 
-        System.out.print("\n" + src + "... NODE: ");
-        //traverse to all the indexes from src
-        for (int nodeNumber = 0; nodeNumber < directedGraph[src].length; nodeNumber++) {
-            int node = directedGraph[src][nodeNumber];
-            System.out.print(" " + node);
-            if (node == dest)
-                return true;
+        queue.add(directedGraph[src]); // begin the search
+
+        while(!queue.isEmpty()) {
+            BFSNode visitingNode = queue.remove();
+
+            if(visitingNode != null) {
+                int[] neighboursIndexes = visitingNode.neighbours;
+                System.out.println(Arrays.toString(neighboursIndexes));
+                for(int neighbourIndex : neighboursIndexes) {
+                    BFSNode neighbour = directedGraph[neighbourIndex];
+                    if(neighbour.state == State.Unvisited) {
+                        if(neighbourIndex == dest) {
+                            return true;
+                        } else {
+                            neighbour.state = State.Visiting;
+                            queue.add(neighbour);
+                        }
+                    }
+                }
+            }
+
+            visitingNode.state = State.Visited;
         }
 
-        //Keep searching recursively
-        return existsRoute(src + 1, dest);
+        return false;
     }
 }

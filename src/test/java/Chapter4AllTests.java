@@ -21,8 +21,8 @@ public class Chapter4AllTests {
 
         Q01 q01 = new Q01(directedGraph);
 
-        boolean expected = true;
-        boolean actual = q01.existsRoute(0, 6);
+        boolean expected = false;
+        boolean actual = q01.existsRoute(5, 1);
 
         assertEquals(expected, actual);
     }
